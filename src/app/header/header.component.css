@@ -1,0 +1,35 @@
+.app-header {
+  margin-bottom: 10px;
+}
+.app-title {
+  font-size: 30px;
+  margin: 15px 0, 10px, 30px;
+}
+
+.mat-card-contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mat-button {
+  margin-right: 20px;
+}
+
+
+@media screen and (min-width: 841px) {
+  .pcDesign {
+    display: block;
+  }
+  .spDesign {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .pcDesign {
+    display: none;
+  }
+  .spDesign {
+    display: block;
+  }
+}

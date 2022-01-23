@@ -1,0 +1,33 @@
+<mat-card class="app-header">
+  <div class="mat-card-contents">
+    <div class="app-title">
+      {{ this.title }}
+    </div>
+    <div class="button-row pcDesign">
+      <a mat-raised-button color='accent' class="mat-button" routerLink="/calc-value">企業価値計算</a>
+      <a mat-raised-button color='accent' class="mat-button" routerLink="/onkabu">恩株</a>
+      <a mat-raised-button color='accent' class="mat-button" routerLink="/look-through">ルックスルー利益</a>
+      <a mat-raised-button color='primary' class="mat-button" routerLink="/login">ログイン</a>
+      <a mat-raised-button color='primary' class="mat-button" (click)='openSignUpWindow()'>新規登録</a>
+    </div>
+    <div class="button-row spDesign">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/calc-value">
+          <!-- <mat-icon>企業価値計算</mat-icon> -->
+          <span>企業価値計算</span>
+        </button>
+        <button mat-menu-item routerLink="/onkabu">
+          <!-- <mat-icon>恩株</mat-icon> -->
+          <span>恩株</span>
+        </button>
+        <button mat-menu-item routerLink="/look-through">
+          <!-- <mat-icon>ルックスルー利益</mat-icon> -->
+          <span>ルックスルー利益</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-card>

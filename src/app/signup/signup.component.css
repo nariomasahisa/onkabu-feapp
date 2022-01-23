@@ -1,0 +1,10 @@
+.user-create-card {
+  height: 500px;
+  width: 500px;
+  margin: 150px auto;
+  border: 1px solid gray;
+}
+
+.form-field {
+  margin-top: 100px;
+}

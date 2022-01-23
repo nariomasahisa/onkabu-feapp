@@ -1,0 +1,19 @@
+mat-card {
+  margin: 30px auto;
+  height: 500px;
+  width: 500px;
+  text-align: center;
+  align-items: center;
+}
+.form-field {
+  margin-bottom: 30px;
+}
+button {
+
+}
+
+@media screen and (max-width: 840px) {
+  mat-card {
+    width: 300px;
+  }
+}

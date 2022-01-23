@@ -1,0 +1,6 @@
+{
+  "/onkabu": {
+    "target": "http://localhost:3000/onkabu",
+    "secure": false
+  }
+}

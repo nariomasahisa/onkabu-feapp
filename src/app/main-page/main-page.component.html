@@ -1,0 +1,35 @@
+<div class="first-row">
+  <!-- 恩株の計算 -->
+  <mat-card class="card-content">
+    <mat-card-header>
+      <mat-card-title class="card-title">恩株</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>恩株は投資元本の回収を終えている株です。</p>
+      <p>利益が出ている株をどこまで売ったら恩株になるかを計算します</p>
+    </mat-card-content>
+    <button mat-raised-button color='primary' routerLink="/onkabu">恩株</button>
+  </mat-card>
+
+  <!-- ルックスルー利益の表示 -->
+  <mat-card class="card-content look-through">
+    <mat-card-header>
+      <mat-card-title class="card-title">ルックスルー利益</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>持株 × EPS(一株あたりの当期純利益)で求めることができます</p>
+    </mat-card-content>
+    <button mat-raised-button color='primary' routerLink="/look-through">ルックスルー利益</button>
+  </mat-card>
+
+    <!-- 企業分析の表示 -->
+    <mat-card class="card-content ">
+      <mat-card-header>
+        <mat-card-title class="card-title">企業価値計算</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>企業価値の計算をします。</p>
+      </mat-card-content>
+      <button mat-raised-button color='primary' routerLink="/calc-value">企業価値計算</button>
+    </mat-card>
+</div>

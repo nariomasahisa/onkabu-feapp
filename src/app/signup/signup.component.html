@@ -1,0 +1,68 @@
+<div class="background">
+  <mat-card class="user-create-card">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" class='form-field'>
+          <ng-template matStepLabel>Step1</ng-template>
+          <div class="notes">名前の登録</div>
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="firstCtrl" required class="input-form">
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext (click)='nameSave()'>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup" label="Step2">
+        <form [formGroup]="secondFormGroup" class='form-field'>
+          <div class="notes">メールアドレスの登録</div>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup" label="Step3">
+        <form [formGroup]="thirdFormGroup" class='form-field'>
+          <div class="notes">パスワードの登録</div>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input type="password" matInput formControlName="thirdCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="forthFormGroup" label="Step4">
+        <form [formGroup]="forthFormGroup" class='form-field'>
+          <div class="notes">パスワードの確認</div>
+          <mat-form-field>
+            <mat-label>Address</mat-label>
+            <input type="password" matInput formControlName="forthCtrl" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Step5</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </mat-card>
+
+  <!-- <button type="submit" (click)="debug()">確認</button> -->
+</div>

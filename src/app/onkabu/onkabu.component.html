@@ -1,0 +1,30 @@
+<mat-card>
+  恩株計算
+  <form class="input-buy-price">
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>取得株価</mat-label>
+        <input matInput #message type="text" placeholder="5000円" name="buyPrice" [(ngModel)] = "buyPrice">
+      </mat-form-field>
+      <div class="output-buy-price">購入時の株価は {{ buyPrice }} 円</div>
+    </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>現在株価</mat-label>
+        <input matInput #message type="text" placeholder="5000円" name="buyPrice" [(ngModel)] = "nowPrice">
+      </mat-form-field>
+    <div class="output-buy-price">現在の株価は {{ nowPrice }} 円</div>
+  </div>
+    <div class="form-field">
+      <mat-form-field>
+        <mat-label>取得株数</mat-label>
+        <input matInput #message type="text" placeholder="5000円" name="buyPrice" [(ngModel)] = "stocks">
+      </mat-form-field>
+      <div class="output-buy-price">購入した株数は {{ stocks }} 株</div>
+    </div>
+  </form>
+  <button mat-raised-button color='primary' (click)=calcOnkabu()>計算</button>
+  <div class="onkabu">
+    {{ onkabu }}
+  </div>
+</mat-card>

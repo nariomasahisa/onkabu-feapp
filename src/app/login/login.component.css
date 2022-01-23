@@ -1,0 +1,27 @@
+.mat-card {
+  position: relative;
+}
+.loginTitle {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.loginComponent {
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.input-area {
+  text-align: center;
+  align-items: center;
+}
+.email, .password {
+  margin: 40px auto;
+
+}
+
+.loginButton {
+  text-align: center;
+}

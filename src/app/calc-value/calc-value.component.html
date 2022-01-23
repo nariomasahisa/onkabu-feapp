@@ -1,0 +1,45 @@
+<mat-card>
+  <h2>企業価値の計算</h2>
+  <form class="input-value">
+    <div class="flex">
+      <div class="form-field">
+        <mat-form-field appearance="outline">
+          <mat-label for="stockName">銘柄名</mat-label>
+          <input matInput [formControl]="stockName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="stockCode">銘柄コード</mat-label>
+          <input matInput [formControl]="stockCode">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="ownerIncome">株主利益</mat-label>
+          <input matInput [formControl]="ownerIncome">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label for="roic">ROIC</mat-label>
+          <input matInput [formControl]="roic">
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+  <button mat-raised-button color='primary' (click)="calcStockValue()">計算</button>
+  <div class="result">
+    <h2>企業価値の一覧</h2>
+    <table>
+      <tr>
+        <th>成長率</th>
+        <th>現在価値</th>
+        <th>超過リターン<br>現在価値</th>
+        <th>資本コスト<br>現在価値</th>
+      </tr>
+      <tr *ngFor='let value of values'>
+        <td>{{ value.per }}</td>
+        <td>{{ value.PV }}</td>
+        <td>{{ value.overReturnPV }}</td>
+        <td>{{ value.investCostPV }}</td>
+      </tr>
+    </table>
+  </div>
+</mat-card>
+
+<router-outlet></router-outlet>
