@@ -10,22 +10,22 @@ export class CalcValueWebService {
     private http: HttpClient
   ) {}
 
-  public nonGrowth(income) {
+  public nonGrowth(income: any) {
     const path = 'http://localhost:3000/value/non';
     return this.http.post<any>(path, income).toPromise();
   }
 
-  public lowGrowth(income) {
+  public lowGrowth(income: any) {
     const path = 'http://localhost:3000/value/low';
     return this.http.post<any>(path, income).toPromise();
   }
 
-  public middleGrowth(income) {
+  public middleGrowth(income: any) {
     const path = 'http://localhost:3000/value/middle';
     return this.http.post<any>(path, income).toPromise();
   }
 
-  public highGrowth(income) {
+  public highGrowth(income: any) {
     const path = 'http://localhost:3000/value/high';
     return this.http.post<any>(path, income).toPromise(); 
   }
