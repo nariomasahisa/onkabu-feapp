@@ -35,9 +35,9 @@ export class CalcValueComponent {
     this.values = [];
     this.ownerIncome = Number(this.netIncome.value) + Number(this.depreciation.value) - Number(this.capitalInvestment.value);
     // calcServiceへ値を渡す
-    this.calcService.inputData(this.roic.value / 100, this.ownerIncome)
-    this.values = this.calcService.values
-    return this.values;
+    return this.calcService.inputData(this.roic.value / 100, this.ownerIncome).then((values) => {
+      this.values = values
+    });
   }
 
   /**

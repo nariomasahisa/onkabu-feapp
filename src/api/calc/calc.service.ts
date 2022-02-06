@@ -36,15 +36,17 @@ export class CalcService {
   constructor() { }
 
   /** コンポーネントからの入力を渡す */
-  inputData(roic: number, income: number): void {
-    this.values = [];
-    this.nonGrowth(roic, income);
-    this.lowGrowth(roic, income);
-    this.middleGrowth(roic, income);
-    this.highGrowth(roic, income);
+  inputData(roic: number, income: number): Promise<Value[]> {
+    return new Promise((resolve) => {
+      this.values = []
+      this.nonGrowth(roic, income);
+      this.lowGrowth(roic, income);
+      this.middleGrowth(roic, income);
+      this.highGrowth(roic, income);
+      resolve(this.values)
+    })
   }
 
-  
   nonGrowth(roic:number, income: number): void {
     this.non.investCostPV = this.investReturnNowValue(roic, income, 1);
     this.non.overReturnPV = this.overReturnNowValue(roic, income, 1);
@@ -94,7 +96,6 @@ export class CalcService {
 
 
   forMethod = (input: number, rate: number): number => {
-    // debugger
     let result = 0;
     let presentValue = 0;
     for (let i = 1; i < 11; i++) {
