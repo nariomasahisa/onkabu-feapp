@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { environmentProd } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,9 @@ export class OnkabuWebService {
     private http: HttpClient
   ) { }
 
-  public calcOnkabu(buy:number, now:number, stocks:number):Promise<string>{
-    const path = 'http://localhost:3000/onkabu'
-    return this.http.post<any>(path, {buy, now, stocks}).toPromise();
+  public calcOnkabu(buy:number, now:number, stocks:number):Promise<any>{
+    const path = `${environment.apiUrl}/dev/onkabu`;
+    const prodPath = `${environmentProd.apiUrl}/dev/onkabu`
+    return this.http.post<any>(prodPath, {buy, now, stocks}).toPromise();
   }
 }

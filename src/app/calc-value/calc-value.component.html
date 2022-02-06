@@ -1,28 +1,41 @@
 <mat-card>
-  <h2>企業価値の計算</h2>
-  <form class="input-value">
-    <div class="flex">
-      <div class="form-field">
-        <mat-form-field appearance="outline">
-          <mat-label for="stockName">銘柄名</mat-label>
-          <input matInput [formControl]="stockName">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label for="stockCode">銘柄コード</mat-label>
-          <input matInput [formControl]="stockCode">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label for="ownerIncome">株主利益</mat-label>
-          <input matInput [formControl]="ownerIncome">
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label for="roic">ROIC</mat-label>
-          <input matInput [formControl]="roic">
-        </mat-form-field>
+  <h1>企業価値の計算</h1>
+  <!-- <p>KxShareのアカウントのお持ちであればこちらの画面でファイルをアップロードしてください</p>
+  <button mat-raised-button color='warn' *ngIf='isInputFlg' (click)='changeView()'>ファイルアップロード画面</button>
+  <button mat-raised-button color='warn' *ngIf=!isInputFlg (click)='changeView()'>インプット画面へ</button> -->
+  <section *ngIf='isInputFlg'>
+    <form class="input-value">
+      <div class="flex">
+        <div class="form-field">
+          <mat-form-field appearance="outline">
+            <mat-label for="netIncome">株主利益</mat-label>
+            <input matInput [formControl]="netIncome">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label for="depreciation">減価償却費</mat-label>
+            <input matInput [formControl]="depreciation">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label for="capitalInvestment">設備投資</mat-label>
+            <input matInput [formControl]="capitalInvestment">
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label for="roic">ROIC</mat-label>
+            <input matInput [formControl]="roic">
+          </mat-form-field>
+        </div>
       </div>
+    </form>
+    <button mat-raised-button color='primary' (click)="calcStockValue()">計算</button>
+  </section>
+  <!-- <section *ngIf='!isInputFlg'>
+    <label class="input-kxshare-file">ファイルアップロード</label>
+    <div class="input-file-area">
+      <span>{{ filename }}</span>
+      <input type="file" id="file" class="input-file" ref='file' accept=".xls, .xlsx" (change)='importFile($event)'>
     </div>
-  </form>
-  <button mat-raised-button color='primary' (click)="calcStockValue()">計算</button>
+    <button mat-raised-button color='primary' (click)="calcStockValue()">計算</button>
+  </section> -->
   <div class="result">
     <h2>企業価値の一覧</h2>
     <table>
