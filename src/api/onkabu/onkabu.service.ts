@@ -12,7 +12,7 @@ export class OnkabuService {
 
   public onkabuCalc(buy:number, now:number, stock:number):Promise<string> {
     return this.onkabuWebService.calcOnkabu(buy, now, stock).then((res)=>{
-      return res;
+      return res.message;
     })
   }
 }
