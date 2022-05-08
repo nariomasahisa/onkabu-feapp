@@ -4,17 +4,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/commons/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DemoMaterialModule } from './material-modules';
-import { MainPageComponent } from './main-page/main-page.component';
+import { MainPageComponent } from './components/pages/main-page/main-page.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { SignUpComponent } from './signup/signup.component';
-import { LoginComponent } from './login/login.component';
-import { RoutingComponent } from './routing/routing.component';
+import { SignUpComponent } from './components/pages/signup/signup.component';
+import { LoginComponent } from './components/pages/login/login.component';
+import { RoutingComponent } from './components/commons/routing/routing.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ValueResultComponent } from './value-result/value-result.component';
-import { NoneComponent } from './none/none.component';
+import { ValueResultComponent } from './components/pages/value-result/value-result.component';
+import { LoadExcelComponent } from './components/commons/load-excel/load-excel.component';
+import { PortfolioRoutingModule } from './components/pages/portfolio/portfolio-routing.module';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { NoneComponent } from './none/none.component';
     LoginComponent,
     RoutingComponent,
     ValueResultComponent,
-    NoneComponent,
+    LoadExcelComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +35,8 @@ import { NoneComponent } from './none/none.component';
     LayoutModule,
     DemoMaterialModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    PortfolioRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
