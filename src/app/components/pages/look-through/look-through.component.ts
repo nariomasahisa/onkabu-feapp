@@ -29,7 +29,7 @@ export class LookThroughComponent implements OnInit {
     'profits',
     'assets'
   ];
-  public dataSource = [...MOCKDATA];
+  public dataSource = [];
   public inputDataForm!: FormGroup;
   public inputDataArray!: FormArray;
 

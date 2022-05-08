@@ -1,9 +1,11 @@
+
 .app-header {
   margin-bottom: 10px;
 }
 .app-title {
   font-size: 30px;
   margin: 15px 0, 10px, 30px;
+  cursor: pointer;
 }
 
 .mat-card-contents {

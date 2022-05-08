@@ -1,11 +1,11 @@
 <mat-card class="app-header">
   <div class="mat-card-contents">
     <div class="app-title">
-      {{ this.title }}
+      <div routerLink="/">{{ this.title }}</div>
     </div>
     <div class="button-row pcDesign">
       <a mat-raised-button color='accent' class="mat-button" routerLink="/onkabu">恩株</a>
-      <a mat-raised-button color='accent' class="mat-button" routerLink="/look-through">ポートフォリオ</a>
+      <a mat-raised-button color='accent' class="mat-button" routerLink="/portfolio">ポートフォリオ</a>
       <a mat-raised-button color='accent' class="mat-button" routerLink="/calc-value">企業価値計算</a>
       <a mat-raised-button color='primary' class="mat-button" routerLink="/login">ログイン</a>
       <a mat-raised-button color='primary' class="mat-button" (click)='openSignUpWindow()'>新規登録</a>

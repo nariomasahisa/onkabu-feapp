@@ -1,10 +1,18 @@
 export interface ICompany {
-  name: string;
-  stock: number;
-  buyPrice: number;
-  eps: number;
-  bps: number;
-  buyAll: number;
-  profits: number;
-  assets: number;
+  // id: string,
+  code: string,
+  name: string,
+  stocks: number,
+  eps: number,
+  bps: number,
+  devidend: number,
+  buyPrice: number,
+  totalProfit: number,
+  bookValue: number,
+  totalBuyPrice: number,
+  profitYield: number,
+  roe: number,
+  per: number,
+  pbr: number,
+  // uid: string,
 }
