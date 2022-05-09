@@ -9,6 +9,8 @@ import { MOCKDATA } from '../look-through/datas';
 })
 export class PortfolioComponent implements OnInit {
 
+  data: any = ''
+
   public displayedColumns: string[] = [
     'name',
     'stock',
