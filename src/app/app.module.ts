@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ValueResultComponent } from './components/pages/value-result/value-result.component';
 import { LoadExcelComponent } from './components/commons/load-excel/load-excel.component';
 import { PortfolioRoutingModule } from './components/pages/portfolio/portfolio-routing.module';
+import { PortfolioEditComponent } from './components/pages/portfolio/portfolio-edit/portfolio-edit.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { PortfolioRoutingModule } from './components/pages/portfolio/portfolio-r
     RoutingComponent,
     ValueResultComponent,
     LoadExcelComponent,
+    PortfolioEditComponent,
   ],
   imports: [
     BrowserModule,
