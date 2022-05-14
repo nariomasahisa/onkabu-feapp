@@ -1,13 +1,18 @@
 <h1>ポートフォリオ</h1>
 
 <section class="buttons">
-  <button mat-raised-button color="primary">新規作成</button>
-  <button mat-raised-button color="primary">編集</button>
+  <button mat-raised-button color="primary" routerLink="create">新規作成</button>
+  <button mat-raised-button color="primary" routerLink="edit">編集</button>
 </section>
 
 <table mat-table [dataSource]='dataSource' class="mat-elevation-z8 demo-table">
 
   <!-- 企業名 -->
+  <ng-container matColumnDef='code'>
+    <th mat-header-cell *matHeaderCellDef>コード</th>
+    <td mat-cell *matCellDef='let element'>{{element.code}}</td>
+  </ng-container>
+
   <ng-container matColumnDef='name'>
     <th mat-header-cell *matHeaderCellDef>企業名</th>
     <td mat-cell *matCellDef='let element'>{{element.name}}</td>
@@ -18,36 +23,61 @@
     <td mat-cell *matCellDef='let element'>{{element.stock}}株</td>
   </ng-container>
 
+  <ng-container matColumnDef='eps'>
+    <th mat-header-cell *matHeaderCellDef>EPS</th>
+    <td mat-cell *matCellDef='let element'>{{element.eps}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef='bps'>
+    <th mat-header-cell *matHeaderCellDef>BPS</th>
+    <td mat-cell *matCellDef='let element'>{{element.bps}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef='devidend'>
+    <th mat-header-cell *matHeaderCellDef>配当金</th>
+    <td mat-cell *matCellDef='let element'>{{element.devidend}}</td>
+  </ng-container>
+
   <ng-container matColumnDef='buyPrice'>
     <th mat-header-cell *matHeaderCellDef>購入価格</th>
     <td mat-cell *matCellDef='let element'>{{element.buyPrice}}円</td>
   </ng-container>
 
-  <ng-container matColumnDef='eps'>
-    <th mat-header-cell *matHeaderCellDef>EPS</th>
-    <td mat-cell *matCellDef='let element'>{{element.eps}}円</td>
+  <ng-container matColumnDef='totalProfit'>
+    <th mat-header-cell *matHeaderCellDef>当期純利益</th>
+    <td mat-cell *matCellDef='let element'>{{element.totalProfit}}円</td>
   </ng-container>
 
-  <ng-container matColumnDef='bps'>
-    <th mat-header-cell *matHeaderCellDef>BPS</th>
-    <td mat-cell *matCellDef='let element'>{{element.bps}}円</td>
-  </ng-container>
-
-  <ng-container matColumnDef='buyAll'>
-    <th mat-header-cell *matHeaderCellDef>購入総額</th>
-    <td mat-cell *matCellDef='let element'>{{element.buyAll}}円</td>
-  </ng-container>
-
-  <ng-container matColumnDef='profits'>
-    <th mat-header-cell *matHeaderCellDef>利益</th>
-    <td mat-cell *matCellDef='let element'>{{element.profits}}円</td>
-  </ng-container>
-
-  <ng-container matColumnDef='assets'>
+  <ng-container matColumnDef='bookValue'>
     <th mat-header-cell *matHeaderCellDef>純資産</th>
-    <td mat-cell *matCellDef='let element'>{{element.assets}}円</td>
+    <td mat-cell *matCellDef='let element'>{{element.bookValue}}円</td>
   </ng-container>
 
-  <tr mat-header-row *matHeaderRowDef='displayedColumns'></tr>
-  <tr mat-row *matRowDef='let row; columns: displayedColumns'></tr>
+  <ng-container matColumnDef='totalBuyPrice'>
+    <th mat-header-cell *matHeaderCellDef>購入総額</th>
+    <td mat-cell *matCellDef='let element'>{{element.totalBuyPrice}}円</td>
+  </ng-container>
+
+  <ng-container matColumnDef='profitYield'>
+    <th mat-header-cell *matHeaderCellDef>当期純利益率</th>
+    <td mat-cell *matCellDef='let element'>{{element.profitYield}}円</td>
+  </ng-container>
+
+  <ng-container matColumnDef='roe'>
+    <th mat-header-cell *matHeaderCellDef>ROE</th>
+    <td mat-cell *matCellDef='let element'>{{element.roe}}円</td>
+  </ng-container>
+
+  <ng-container matColumnDef='per'>
+    <th mat-header-cell *matHeaderCellDef>PER</th>
+    <td mat-cell *matCellDef='let element'>{{element.per}}円</td>
+  </ng-container>
+
+  <ng-container matColumnDef='pbr'>
+    <th mat-header-cell *matHeaderCellDef>PBR</th>
+    <td mat-cell *matCellDef='let element'>{{element.pbr}}円</td>
+  </ng-container>
+
+  <tr class="table-header" mat-header-row *matHeaderRowDef='displayedColumns'></tr>
+  <tr class="table-data" mat-row *matRowDef='let row; columns: displayedColumns'></tr>
 </table>

@@ -12,24 +12,34 @@ export class PortfolioComponent implements OnInit {
   data: any = ''
 
   public displayedColumns: string[] = [
+    'code',
     'name',
     'stock',
-    'buyPrice',
     'eps',
     'bps',
-    'buyAll',
-    'profits',
-    'assets'
+    'devidend',
+    'buyPrice',
+    'totalProfit',
+    'bookValue',
+    'totalBuyPrice',
+    'profitYield',
+    'roe',
+    'per',
+    'pbr'
   ];
 
   public dataSource = [...MOCKDATA];
 
   constructor(
-    public portfolioService: PortfolioService
+    private portfolioService: PortfolioService
   ) { }
 
   ngOnInit(): void {
     this.portfolioService.getPortfolioData();
+  }
+
+  toCreate(): void {
+    
   }
 
 }
