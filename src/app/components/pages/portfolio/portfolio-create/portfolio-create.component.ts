@@ -11,5 +11,7 @@ export class PortfolioCreateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  save(): void {
+    console.log('saved')
+  }
 }
