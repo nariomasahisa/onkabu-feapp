@@ -2,6 +2,7 @@ import { ICompany } from "src/app/voes/i-company";
 
 export const MOCKDATA: ICompany[] = [
   {
+    id: 'ahrnarhgaj',
     code: '1233',
     name:'良品計画',
     stocks: 500,
@@ -15,9 +16,11 @@ export const MOCKDATA: ICompany[] = [
     profitYield: 20,
     roe: 10.5,
     per: 20,
-    pbr: 1.85
+    pbr: 1.85,
+    uid: 'garnjkrahgaa;kjarn'
   },
   {
+    id: 'ahrnarhgaj',
     code: '1233',
     name:'JACリクルートメント',
     stocks: 400,
@@ -31,9 +34,11 @@ export const MOCKDATA: ICompany[] = [
     profitYield: 20,
     roe: 10.5,
     per: 20,
-    pbr: 1.85
+    pbr: 1.85,
+    uid: 'garnjkrahgaa;kjarn'
   },
   {
+    id: 'ahrnarhgaj',
     code: '1233',
     name:'田中建設工業',
     stocks: 100,
@@ -47,9 +52,11 @@ export const MOCKDATA: ICompany[] = [
     profitYield: 20,
     roe: 10.5,
     per: 20,
-    pbr: 1.85
+    pbr: 1.85,
+    uid: 'garnjkrahgaa;kjarn'
   },
   {
+    id: 'ahrnarhgaj',
     code: '1233',
     name:'Ciメディカル',
     stocks: 4,
@@ -63,9 +70,11 @@ export const MOCKDATA: ICompany[] = [
     profitYield: 20,
     roe: 10.5,
     per: 20,
-    pbr: 1.85
+    pbr: 1.85,
+    uid: 'garnjkrahgaa;kjarn'
   },
   {
+    id: 'ahrnarhgaj',
     code: '1233',
     name: 'ウォンテッドリー',
     stocks: 1100,
@@ -79,9 +88,11 @@ export const MOCKDATA: ICompany[] = [
     profitYield: 20,
     roe: 10.5,
     per: 20,
-    pbr: 1.85
+    pbr: 1.85,
+    uid: 'garnjkrahgaa;kjarn'
   },
   {
+    id: 'ahrnarhgaj',
     code: '1233',
     name: 'ロジザード',
     stocks: 700,
@@ -95,9 +106,11 @@ export const MOCKDATA: ICompany[] = [
     profitYield: 20,
     roe: 10.5,
     per: 20,
-    pbr: 1.85
+    pbr: 1.85,
+    uid: 'garnjkrahgaa;kjarn'
   },
   {
+    id: 'ahrnarhgaj',
     code: '1233',
     name:'ソフトバンクグループ',
     stocks: 100,
@@ -111,6 +124,7 @@ export const MOCKDATA: ICompany[] = [
     profitYield: 20,
     roe: 10.5,
     per: 20,
-    pbr: 1.85
+    pbr: 1.85,
+    uid: 'garnjkrahgaa;kjarn'
   }
 ]

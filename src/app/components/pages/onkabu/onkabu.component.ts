@@ -10,11 +10,11 @@ import { OnkabuService } from 'src/app/services/onkabu/onkabu.service';
 })
 export class OnkabuComponent implements OnInit {
 
-  public buyPrice!: number;
-  public nowPrice!: number;
-  public stocks!: number;
-  public profit!: number;
-  public onkabu!: string;
+  buyPrice!: number;
+  nowPrice!: number;
+  stocks!: number;
+  profit!: number;
+  onkabu!: string;
 
 
   constructor(
@@ -24,7 +24,7 @@ export class OnkabuComponent implements OnInit {
   ngOnInit(): void {
     this.profit = this.nowPrice - this.buyPrice
   }
-  public calcOnkabu(): Promise<string>{
+  calcOnkabu(): Promise<string>{
     return this.onkabuService.onkabuCalc(this.buyPrice, this.nowPrice, this.stocks).then((res) => {
       this.onkabu = res
       return this.onkabu;

@@ -1,3 +1,44 @@
 <h1>保有株の追加</h1>
+
 <button mat-raised-button color="primary" (click)="save()">保存</button>
 <button mat-raised-button routerLink="/portfolio">戻る</button>
+
+<form class="input-stock-data">
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>コード</mat-label>
+      <input matInput #message type="text" placeholder="コード" name="code" [(ngModel)]="code" >
+    </mat-form-field>
+  </div>
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>企業名</mat-label>
+      <input matInput #message type="text" placeholder="コード" name="name" [(ngModel)]="name">
+    </mat-form-field>
+  </div>
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>株数</mat-label>
+      <input matInput #message type="text" placeholder="コード" name="stock" [(ngModel)]="stock">
+    </mat-form-field>
+  </div>
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>EPS</mat-label>
+      <input matInput #message type="text" placeholder="コード" name="eps" [(ngModel)]="eps">
+    </mat-form-field>
+  </div>
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>配当金</mat-label>
+      <input matInput #message type="text" placeholder="コード" name="devidend" [(ngModel)]="devidend">
+    </mat-form-field>
+  </div>
+  <div class="form-field">
+    <mat-form-field appearance="outline">
+      <mat-label>購入単価</mat-label>
+      <input matInput #message type="text" placeholder="コード" name="buyPrice" [(ngModel)]="buyPrice">
+    </mat-form-field>
+  </div>
+  <mat-icon class="mat-icon" aria-hidden="false" aria-label="add icon" (click)="add()">add_circle</mat-icon>
+</form>

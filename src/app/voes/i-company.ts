@@ -1,5 +1,5 @@
 export interface ICompany {
-  // id: string,
+  id: string,
   code: string,
   name: string,
   stocks: number,
@@ -14,5 +14,5 @@ export interface ICompany {
   roe: number,
   per: number,
   pbr: number,
-  // uid: string,
+  uid: string,
 }
