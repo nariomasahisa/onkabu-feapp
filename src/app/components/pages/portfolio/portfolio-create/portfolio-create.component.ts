@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ICompany } from 'src/app/voes/i-company';
 
 @Component({
@@ -8,27 +9,32 @@ import { ICompany } from 'src/app/voes/i-company';
 })
 export class PortfolioCreateComponent implements OnInit {
 
-  id!: string;
-  code!: string;
-  name!: string;
-  stock!: number;
-  eps!: number;
-  bps!: number;
-  devidend!: number;
-  buyPrice!: number;
-
-  totalProfit!: number;
-  bookValue!: number;
-  totalBuyPrice!: number;
-  profitYield!: number;
-  roe!:number;
-  per!:number;
-  pbr!:number;
-  uid!: string;
+  form: FormGroup = this.fb.group({
+    code: ['', [Validators.required]],
+    name: ['', [Validators.required]],
+    stock: [0, [Validators.min(1), Validators.required]],
+    eps: [0, [Validators.required]],
+    bps: [0, [Validators.min(1),Validators.required]],
+    devidend: [0, [Validators.required]],
+    buyPrice: [0, [Validators.min(1),Validators.required]],
+  })
+  id: string = '';
+  totalProfit: number = 0;
+  bookValue: number = 0;
+  totalBuyPrice: number = 0;
+  profitYield: number = 0;
+  roe: number = 0;
+  per: number = 0;
+  pbr: number = 0;
+  uid: string = '';
 
   stockArray: ICompany[] = []
 
-  constructor() { }
+  constructor(
+    private fb: FormBuilder
+  ) {
+
+  }
 
   ngOnInit(): void {
 
@@ -37,28 +43,49 @@ export class PortfolioCreateComponent implements OnInit {
     console.log('saved')
   }
   add(): void {
-    this.stockArray.push(this.generateData())
-    console.log(this.stockArray)
+    if (this.stockArray.length === 0) {
+      this.stockArray.push(this.generateData())
+    } else {
+      const findCode = this.stockArray.find(data => data.code === this.generateData().code)
+      if (findCode === undefined) {
+        this.stockArray.push(this.generateData())        
+      } else {
+        alert('同じ銘柄は再度登録できません')
+      }
+    }
+    
   }
+  get isFormValid(): boolean {
+    return this.form.status === 'VALID';
+  }
+
+  get isSameStock(): boolean {
+    const findCode = this.stockArray.find(data => data.code === this.generateData().code)
+    if (findCode !== undefined) {
+      return true;
+    }
+    return false
+  }
+
   generateData(): ICompany {
     this.id = 'hoge'
-    this.totalProfit = this.eps * this.stock
-    this.bookValue = this.bps * this.stock
-    this.totalBuyPrice = this.buyPrice * this.stock
-    this.profitYield = this.eps / this.buyPrice
-    this.roe = this.eps / this.bps
-    this.per = this.buyPrice / this.eps
-    this.pbr = this.buyPrice / this.bps
+    this.totalProfit = this.form.controls.bps.value * this.form.controls.stock.value
+    this.bookValue = this.form.controls.bps.value * this.form.controls.stock.value
+    this.totalBuyPrice = this.form.controls.buyPrice.value * this.form.controls.stock.value
+    this.profitYield = this.form.controls.eps.value / this.form.controls.buyPrice.value
+    this.roe = this.form.controls.eps.value / this.form.controls.bps.value
+    this.per = this.form.controls.buyPrice.value / this.form.controls.eps.value
+    this.pbr = this.form.controls.buyPrice.value / this.form.controls.bps.value
     this.uid = 'dummyId'
     return {
       id: this.id,
-      code: this.code,
-      name: this.name,
-      stocks: this.stock,
-      eps: this.eps,
-      bps: this.bps,
-      devidend: this.devidend,
-      buyPrice: this.buyPrice,
+      code: this.form.controls.code.value,
+      name: this.form.controls.name.value,
+      stocks: this.form.controls.stock.value,
+      eps: this.form.controls.eps.value,
+      bps: this.form.controls.bps.value,
+      devidend: this.form.controls.devidend.value,
+      buyPrice: this.form.controls.buyPrice.value,
       totalProfit: this.totalProfit,
       bookValue: this.bookValue,
       totalBuyPrice: this.totalBuyPrice,

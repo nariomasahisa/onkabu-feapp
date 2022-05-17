@@ -1,44 +1,58 @@
 <h1>保有株の追加</h1>
 
-<button mat-raised-button color="primary" (click)="save()">保存</button>
-<button mat-raised-button routerLink="/portfolio">戻る</button>
+<button class="mat-raised-button" mat-raised-button color="primary" (click)="save()">保存</button>
+<button class="mat-raised-button" mat-raised-button routerLink="/portfolio">戻る</button>
 
-<form class="input-stock-data">
+<form [formGroup]="form" class="input-stock-data">
   <div class="form-field">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="code">
       <mat-label>コード</mat-label>
-      <input matInput #message type="text" placeholder="コード" name="code" [(ngModel)]="code" >
+      <input matInput #message type="text" placeholder="コード" name="code" formControlName="code" >
+      <mat-error *ngIf="form.controls.code.errors?.required">企業コードを入力してください</mat-error>
     </mat-form-field>
   </div>
   <div class="form-field">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="name">
       <mat-label>企業名</mat-label>
-      <input matInput #message type="text" placeholder="コード" name="name" [(ngModel)]="name">
+      <input matInput #message type="text" placeholder="企業名" name="name" formControlName="name">
+      <mat-error *ngIf="form.controls.name.errors?.required">企業名を入力してください</mat-error>
     </mat-form-field>
   </div>
   <div class="form-field">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="stock">
       <mat-label>株数</mat-label>
-      <input matInput #message type="text" placeholder="コード" name="stock" [(ngModel)]="stock">
+      <input matInput #message type="text" placeholder="株数" name="stock" formControlName="stock">
+      <mat-error *ngIf="form.controls.stock.invalid">株数は0以上で入力してください</mat-error>
     </mat-form-field>
   </div>
   <div class="form-field">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="eps">
       <mat-label>EPS</mat-label>
-      <input matInput #message type="text" placeholder="コード" name="eps" [(ngModel)]="eps">
+      <input matInput #message type="text" placeholder="EPS" name="eps" formControlName="eps">
     </mat-form-field>
   </div>
   <div class="form-field">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="bps">
+      <mat-label>BPS</mat-label>
+      <input matInput #message type="text" placeholder="BPS" name="bps" formControlName="bps">
+      <mat-error *ngIf="form.controls.bps.invalid">BPSは0以上で入力してください</mat-error>
+    </mat-form-field>
+  </div>
+  <div class="form-field">
+    <mat-form-field appearance="outline" class="devidend">
       <mat-label>配当金</mat-label>
-      <input matInput #message type="text" placeholder="コード" name="devidend" [(ngModel)]="devidend">
+      <input matInput #message type="text" placeholder="配当金" name="devidend" formControlName="devidend">
+      <mat-error *ngIf="form.controls.buyPrice.invalid">配当金を入力してください</mat-error>
     </mat-form-field>
   </div>
   <div class="form-field">
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" class="buyPrice">
       <mat-label>購入単価</mat-label>
-      <input matInput #message type="text" placeholder="コード" name="buyPrice" [(ngModel)]="buyPrice">
+      <input matInput #message type="text" placeholder="購入単価" name="buyPrice" formControlName="buyPrice">
+      <mat-error *ngIf="form.controls.buyPrice.invalid">購入単価を入力してください</mat-error>
     </mat-form-field>
   </div>
-  <mat-icon class="mat-icon" aria-hidden="false" aria-label="add icon" (click)="add()">add_circle</mat-icon>
+  <button class="mat-icon-button" mat-icon-button [disabled]="!isFormValid || isSameStock" (click)="add()">
+    <mat-icon class="mat-icon" aria-hidden="false" aria-label="add icon">add_circle</mat-icon>
+  </button>
 </form>

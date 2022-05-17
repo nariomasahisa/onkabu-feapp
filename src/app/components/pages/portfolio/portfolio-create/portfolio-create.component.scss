@@ -1,5 +1,10 @@
 button {
-  margin: 0 0 0 30px;
+  &.mat-raised-button {
+    margin: 0 0 0 30px;
+  }
+  &.mat-icon-button {
+    margin: 0; 
+  }
 }
 
 .input-stock-data {
@@ -11,4 +16,16 @@ button {
 mat-icon {
   margin: 18px 0;
   cursor: pointer;
+}
+
+mat-form-field {
+  &.code {
+    width: 70px;
+  }
+  &.name {
+    width: 300px;
+  }
+  &.stock, &.eps, &.bps, &.devidend, &.buyPrice {
+    width: 130px;
+  }
 }
