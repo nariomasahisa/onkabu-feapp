@@ -32,9 +32,7 @@ export class PortfolioCreateComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder
-  ) {
-
-  }
+  ) {}
 
   ngOnInit(): void {
 
@@ -68,7 +66,7 @@ export class PortfolioCreateComponent implements OnInit {
   }
 
   generateData(): ICompany {
-    this.id = 'hoge'
+    this.id = 'hoge' // change to uuid
     this.totalProfit = this.form.controls.bps.value * this.form.controls.stock.value
     this.bookValue = this.form.controls.bps.value * this.form.controls.stock.value
     this.totalBuyPrice = this.form.controls.buyPrice.value * this.form.controls.stock.value
@@ -76,7 +74,7 @@ export class PortfolioCreateComponent implements OnInit {
     this.roe = this.form.controls.eps.value / this.form.controls.bps.value
     this.per = this.form.controls.buyPrice.value / this.form.controls.eps.value
     this.pbr = this.form.controls.buyPrice.value / this.form.controls.bps.value
-    this.uid = 'dummyId'
+    this.uid = 'dummyId' // get value from localStorage
     return {
       id: this.id,
       code: this.form.controls.code.value,
