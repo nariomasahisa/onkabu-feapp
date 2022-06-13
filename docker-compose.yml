@@ -1,4 +1,12 @@
-version: '3'
+version: '3.8'
 services:
   web:
-    container_name: name
+    container_name: onkabu-feapp
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - "4200:4200"
+    tty: true

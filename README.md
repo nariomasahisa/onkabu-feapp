@@ -1,7 +1,8 @@
 ```
-docker build -t onkabu-feapp:latest .
+docker-compose build
+docker-compose up
 ```
 
 ```
-docker container run -p 4200:4200 -v ${PWD}:/app --name onkabu-feapp onkabu-feapp:latest;
+chmod 777 runserver.sh
 ```

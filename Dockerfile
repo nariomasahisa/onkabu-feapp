@@ -1,8 +1,8 @@
-FROM node:16.13
+FROM --platform=linux/amd64 node:16
 
 WORKDIR /app
-COPY . /app
-RUN npm install
-RUN npm install -g @angular/cli
+COPY ./package.json /app/
+COPY ./runserver.sh /app/
+RUN chmod 777 /app/runserver.sh
 
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "/app/runserver.sh" ]
