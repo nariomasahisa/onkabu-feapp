@@ -28,15 +28,11 @@ export class CalcValueService {
     const httpOptions = {
       headers :new HttpHeaders({
         'Content-Type': 'application/json',
-        // Authorization: 'my-auth-token'
       })
     }
     return this.http.post<CalcValueResponse>(this.url, request, httpOptions)
       .pipe(
         catchError(this.handleError)
       )
-      // .subscribe({
-      //   next(res: )
-      // })
   }
 }
